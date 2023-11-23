@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Arrays;
+
 /**
  * Information pertaining to students.
  *
@@ -13,7 +15,6 @@ import lombok.ToString;
 @EqualsAndHashCode
 @Getter
 @Setter
-@ToString
 public class Student {
     private String fname;
     private Course[] courses;
@@ -28,5 +29,25 @@ public class Student {
         this.lname = lname;
         this.department = department;
         this.id = String.format("S%01", nextId++);
+    }
+
+    @Override
+    public String toString() {
+        String coursesStr = "[";
+        for (Course course : courses) {
+            if (course != null) {
+                coursesStr += course + ", ";
+            }
+        }
+        coursesStr += "]";
+
+        return "Student{" +
+                "fname='" + fname + '\'' +
+                ", courses=" + coursesStr +
+                ", id='" + id + '\'' +
+                ", courseNum=" + courseNum +
+                ", lname='" + lname + '\'' +
+                ", department=" + department +
+                '}';
     }
 }
