@@ -18,21 +18,22 @@ public class SchoolManagementSystem {
     private static final int MAX_DEPARTMENT_NUM = 5;
     private int departmentNum = 0;
     private Department[] departments;
-    private static final int MAX_STUDENT_NUM = 200;
     private static final int MAX_STUDENT_COURSE_REGISTRATION = 5;
     private static final int MAX_TEACHER_NUM = 20;
     private static final int MAX_COURSE_NUM = 30;
     private static final int MAX_REGISTRATION_NUM = 5;
-    public SchoolManagementSystem(String ) {
+    private String name;
 
+    public SchoolManagementSystem(String name) {
+        this.name = name;
     }
 
     /**
      * The method searches for a department in the departments based on the id.
-     * @param  departmentId department id
+     * @param id department id
      * @return a department or null if the id does not match with anything
      */
-    public Department findDepartment(String departmentId) {}
+    public Department findDepartment(String id) {}
 
     /**
      * The method displays all teachers in a school, only display the teacher that is not null. And only display
@@ -62,18 +63,18 @@ public class SchoolManagementSystem {
 
     /**
      * The method searches for a student in the students based on a studentId.
-     * @param studentId student id
+     * @param id student id
      * @return a student or null if the studentId does not match with anything in the students
      */
-    public Student findStudent(String studentId) {}
+    public Student findStudent(String id) {}
 
     /**
      * The method adds a new course to the list of courses in the system.
      * @param courseName the course's name
      * @param credits the amount of credits the course has
-     * @param departmentId department id
+     * @param id department id
      */
-    public void addCourse(String courseName, double credits, String departmentId) {}
+    public void addCourse(String courseName, double credits, String id) {}
 
     /**
      * The method registers a course for a student, based on studentId and courseId, which will check
@@ -92,16 +93,16 @@ public class SchoolManagementSystem {
      * The method adds a new teacher to the list of teachers in the system.
      * @param fname teacher's first name
      * @param lname teacher's last name
-     * @param studentId teacher's if
+     * @param id teacher's if
      */
-    public void addTeacher(String fname, String lname, String studentId) {}
+    public void addTeacher(String fname, String lname, String id) {}
 
     /**
      * The method searches for a course in the courses based on a courseId.
-     * @param courseId course id
+     * @param id course id
      * @return a course or null if the courseId does not match with anything in the courses
      */
-    public Course findCourse(String courseId) {}
+    public Course findCourse(String id) {}
 
     /**
      * Display all departments in a school, only display the department that is not null.
@@ -112,16 +113,16 @@ public class SchoolManagementSystem {
      * The method adds a new student to the list of students in the system.
      * @param fname student's first name
      * @param lname student's last name
-     * @param studentId student's id
+     * @param id student's id
      */
-    public void addStudent(String fname, String lname, String studentId) {}
+    public void addStudent(String fname, String lname, String id) {}
 
     /**
      * The method searches for a teacher in the teachers based on the id.
-     * @param teacherId teacher id
+     * @param id teacher id
      * @returna a teacher or null if the teacherId does not match with anything in the teachers
      */
-    public Teacher findTeacher(String teacherId) {}
+    public Teacher findTeacher(String id) {}
 
     /**
      * Display all courses in a school, only display the course that is not null.

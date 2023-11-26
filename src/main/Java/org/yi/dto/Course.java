@@ -21,6 +21,7 @@ public class Course {
     private Teacher teacher;
     private String courseName;
     private static int nextId = 1;
+    private static final int MAX_STUDENT_NUM = 200;
 
     public Course(String courseName, double credit, Department department) {
         this.courseName = courseName;
