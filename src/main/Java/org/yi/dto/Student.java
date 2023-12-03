@@ -12,42 +12,38 @@ import java.util.Arrays;
  *
  * @author Alessandro Pomponi
  */
+@ToString
 @EqualsAndHashCode
 @Getter
 @Setter
 public class Student {
     private String fname;
+    private String lname;
     private Course[] courses;
     private String id;
     private int courseNum;
     private static int nextId = 1;
-    private String lname;
     private Department department;
 
+    public Student(String fname, String lname, Course[] courses, Department department) {
+        this.id = generateNextId();
+        this.fname = fname;
+        this.lname = lname;
+        this.courses = courses;
+        this.courseNum = courses.length;
+        this.department = department;
+    }
+
     public Student(String fname, String lname, Department department) {
+        this.id = generateNextId();
         this.fname = fname;
         this.lname = lname;
         this.department = department;
-        this.id = String.format("S%01", nextId++);
+        this.courses = new Course[0];
+        this.courseNum = 0;
     }
 
-    @Override
-    public String toString() {
-        String coursesStr = "[";
-        for (Course course : courses) {
-            if (course != null) {
-                coursesStr += course + ", ";
-            }
-        }
-        coursesStr += "]";
-
-        return "Student{" +
-                "fname='" + fname + '\'' +
-                ", courses=" + coursesStr +
-                ", id='" + id + '\'' +
-                ", courseNum=" + courseNum +
-                ", lname='" + lname + '\'' +
-                ", department=" + department +
-                '}';
+    private static String generateNextId() {
+        return "S" + String.format("%03d", nextId++);
     }
 }

@@ -16,5 +16,7 @@ public class Main {
         schoolSystem.addDepartment("Computer Technology");
         schoolSystem.addDepartment("Math");
         schoolSystem.addDepartment("Music");
+
+        schoolSystem.addStudent("Alessandro", "Pomponi", "S001");
     }
 }

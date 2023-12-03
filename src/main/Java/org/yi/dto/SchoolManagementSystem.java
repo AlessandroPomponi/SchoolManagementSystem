@@ -129,7 +129,16 @@ public class SchoolManagementSystem {
      * @param lname student's last name
      * @param id student's id
      */
-    public void addStudent(String fname, String lname, String id) {}
+    public void addStudent(String fname, String lname, String id) {
+        if (departmentCount > 0) {
+            Department department = departments[0];
+            Student student = new Student(fname, lname, department);
+            student.setId(id);
+            System.out.println("Student " + student + " added successfully.");
+        } else {
+            System.out.println("Cannot add student. No departments available.");
+        }
+    }
 
     /**
      * The method searches for a teacher in the teachers based on the id.

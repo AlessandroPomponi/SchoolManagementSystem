@@ -25,10 +25,27 @@ public class Course {
     private static int nextId = 1;
     private static final int MAX_STUDENT_NUM = 200;
 
-    public Course(String courseName, double credit, Department department) {
-        this.courseName = courseName;
+    public Course(double credit, Department department, Teacher teacher, String courseName) {
         this.credit = credit;
+        this.id = generateNextId();
+        this.students = new Student[MAX_STUDENT_NUM];
         this.department = department;
-        this.id = String.format("C%01", nextId++);
+        this.teacher = teacher;
+        this.courseName = courseName;
+        this.studentNum = 0;
+    }
+
+    public Course(String courseName, double credit, Department department) {
+        this.credit = credit;
+        this.id = generateNextId();
+        this.students = new Student[MAX_STUDENT_NUM];
+        this.department = department;
+        this.teacher = null;
+        this.courseName = courseName;
+        this.studentNum = 0;
+    }
+
+    private static String generateNextId() {
+        return "C" + String.format("%03d", nextId++);
     }
 }
