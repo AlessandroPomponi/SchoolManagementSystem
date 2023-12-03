@@ -38,7 +38,7 @@ public class SchoolManagementSystem {
      * @param id department id
      * @return a department or null if the id does not match with anything
      */
-    public Department findDepartment(String id) {}
+//    public Department findDepartment(String id) {}
 
     /**
      * The method displays all teachers in a school, only display the teacher that is not null. And only display
@@ -80,7 +80,7 @@ public class SchoolManagementSystem {
      * @param id student id
      * @return a student or null if the studentId does not match with anything in the students
      */
-    public Student findStudent(String id) {}
+//    public Student findStudent(String id) {}
 
     /**
      * The method adds a new course to the list of courses in the system.
@@ -116,7 +116,7 @@ public class SchoolManagementSystem {
      * @param id course id
      * @return a course or null if the courseId does not match with anything in the courses
      */
-    public Course findCourse(String id) {}
+//    public Course findCourse(String id) {}
 
     /**
      * Display all departments in a school, only display the department that is not null.
@@ -136,7 +136,7 @@ public class SchoolManagementSystem {
      * @param id teacher id
      * @returna a teacher or null if the teacherId does not match with anything in the teachers
      */
-    public Teacher findTeacher(String id) {}
+//    public Teacher findTeacher(String id) {}
 
     /**
      * Display all courses in a school, only display the course that is not null.

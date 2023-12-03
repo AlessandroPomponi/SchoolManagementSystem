@@ -3,12 +3,14 @@ package org.yi.dto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * Information pertaining to departments.
  *
  * @author Alessandro Pomponi
  */
+@ToString
 @EqualsAndHashCode
 @Getter
 @Setter
@@ -24,10 +26,5 @@ public class Department {
 
     private static String generateNextId() {
         return "D" + String.format("%03d", nextId++);
-    }
-
-    @Override
-    public String toString() {
-
     }
 }

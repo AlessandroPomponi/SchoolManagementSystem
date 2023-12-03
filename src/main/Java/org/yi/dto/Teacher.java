@@ -3,12 +3,14 @@ package org.yi.dto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * Information pertaining to teachers.
  *
  * @author Alessandro Pomponi
  */
+@ToString
 @EqualsAndHashCode
 @Getter
 @Setter
@@ -24,10 +26,5 @@ public class Teacher {
         this.lname = lname;
         this.department = department;
         this.id = String.format("T%01", nextId++);
-    }
-
-    @Override
-    public String toString() {
-
     }
 }

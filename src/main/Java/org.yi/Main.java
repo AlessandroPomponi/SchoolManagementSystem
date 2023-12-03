@@ -12,5 +12,9 @@ public class Main {
         SchoolManagementSystem schoolSystem = new SchoolManagementSystem();
 
         schoolSystem.addDepartment("Computer Science");
+        schoolSystem.addDepartment("Social Science");
+        schoolSystem.addDepartment("Computer Technology");
+        schoolSystem.addDepartment("Math");
+        schoolSystem.addDepartment("Music");
     }
 }
