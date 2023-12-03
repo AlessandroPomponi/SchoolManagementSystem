@@ -14,12 +14,16 @@ import lombok.Setter;
 @Setter
 public class Department {
     private String id;
-    private int nextId;
+    private static int nextId = 1;
     private String departmentName;
 
     public Department(String departmentName) {
         this.departmentName = departmentName;
-        this.id = String.format("D%01", nextId++);
+        this.id = generateNextId();
+    }
+
+    private static String generateNextId() {
+        return "D" + String.format("%03d", nextId++);
     }
 
     @Override

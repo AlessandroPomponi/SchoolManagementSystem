@@ -1,5 +1,7 @@
 package org.yi;
 
+import org.yi.dto.SchoolManagementSystem;
+
 /**
  * Print Info
  *
@@ -7,6 +9,8 @@ package org.yi;
  */
 public class Main {
     public static void main(String[] args) {
+        SchoolManagementSystem schoolSystem = new SchoolManagementSystem();
 
+        schoolSystem.addDepartment("Computer Science");
     }
 }

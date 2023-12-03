@@ -16,8 +16,8 @@ import lombok.ToString;
 @ToString
 public class SchoolManagementSystem {
     private static final int MAX_DEPARTMENT_NUM = 5;
-    private int departmentNum = 0;
     private Department[] departments;
+    private int departmentCount;
     private static final int MAX_STUDENT_COURSE_REGISTRATION = 5;
     private static final int MAX_TEACHER_NUM = 20;
     private static final int MAX_COURSE_NUM = 30;
@@ -26,6 +26,11 @@ public class SchoolManagementSystem {
 
     public SchoolManagementSystem(String name) {
         this.name = name;
+    }
+
+    public SchoolManagementSystem() {
+        this.departments = new Department[MAX_DEPARTMENT_NUM];
+        this.departmentCount = 0;
     }
 
     /**
@@ -53,7 +58,16 @@ public class SchoolManagementSystem {
      * The method add a new department to the list of departments.
      * @param departmentName
      */
-    public void addDepartment(String departmentName) {}
+    public void addDepartment(String departmentName) {
+        if (departmentCount < MAX_DEPARTMENT_NUM) {
+            Department department = new Department(departmentName);
+            departments[departmentCount] = department;
+            departmentCount++;
+            System.out.println("Department " + department);
+        } else {
+            System.out.println("Cannot add department. Limit of " + MAX_DEPARTMENT_NUM + " departments reached.");
+        }
+    }
 
     /**
      * The method displays all students in a school. It will only display the student that is not null and only display
