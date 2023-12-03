@@ -18,5 +18,8 @@ public class Main {
         schoolSystem.addDepartment("Music");
 
         schoolSystem.addStudent("Alessandro", "Pomponi", "S001");
+        schoolSystem.addStudent("Vanny", "Ruiz", "S002");
+
+        schoolSystem.printStudents();
     }
 }

@@ -18,6 +18,9 @@ public class SchoolManagementSystem {
     private static final int MAX_DEPARTMENT_NUM = 5;
     private Department[] departments;
     private int departmentCount;
+    private static final int MAX_STUDENT_NUM = 200;
+    private Student[] students;
+    private int studentCount;
     private static final int MAX_STUDENT_COURSE_REGISTRATION = 5;
     private static final int MAX_TEACHER_NUM = 20;
     private static final int MAX_COURSE_NUM = 30;
@@ -31,6 +34,8 @@ public class SchoolManagementSystem {
     public SchoolManagementSystem() {
         this.departments = new Department[MAX_DEPARTMENT_NUM];
         this.departmentCount = 0;
+        this.students = new Student[MAX_STUDENT_NUM];
+        this.studentCount = 0;
     }
 
     /**
@@ -73,7 +78,12 @@ public class SchoolManagementSystem {
      * The method displays all students in a school. It will only display the student that is not null and only display
      * the names of courses and department if there is any.
      */
-    public void printStudents() {}
+    public void printStudents() {
+        System.out.println("Students:");
+        for (int i = 0; i < studentCount; i++) {
+            System.out.println(students[i]);
+        }
+    }
 
     /**
      * The method searches for a student in the students based on a studentId.

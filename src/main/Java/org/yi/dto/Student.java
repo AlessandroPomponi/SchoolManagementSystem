@@ -25,15 +25,6 @@ public class Student {
     private static int nextId = 1;
     private Department department;
 
-    public Student(String fname, String lname, Course[] courses, Department department) {
-        this.id = generateNextId();
-        this.fname = fname;
-        this.lname = lname;
-        this.courses = courses;
-        this.courseNum = courses.length;
-        this.department = department;
-    }
-
     public Student(String fname, String lname, Department department) {
         this.id = generateNextId();
         this.fname = fname;
