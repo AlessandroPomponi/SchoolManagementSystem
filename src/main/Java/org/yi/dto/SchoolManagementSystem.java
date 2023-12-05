@@ -119,7 +119,9 @@ public class SchoolManagementSystem {
      * @param lname teacher's last name
      * @param id teacher's if
      */
-    public void addTeacher(String fname, String lname, String id) {}
+    public void addTeacher(String fname, String lname, String id) {
+
+    }
 
     /**
      * The method searches for a course in the courses based on a courseId.
@@ -140,13 +142,14 @@ public class SchoolManagementSystem {
      * @param id student's id
      */
     public void addStudent(String fname, String lname, String id) {
-        if (departmentCount > 0) {
-            Department department = departments[0];
-            Student student = new Student(fname, lname, department);
-            student.setId(id);
+        if (studentCount < MAX_STUDENT_NUM) {
+            Department department = new Department("Computer Science"); // Assuming a default department
+            Student student = new Student(id, fname, lname, department);
+            students[studentCount] = student;
+            studentCount++;
             System.out.println("Student " + student + " added successfully.");
         } else {
-            System.out.println("Cannot add student. No departments available.");
+            System.out.println("Cannot add student. Maximum student limit reached.");
         }
     }
 

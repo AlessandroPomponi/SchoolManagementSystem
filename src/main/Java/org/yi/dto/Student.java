@@ -34,6 +34,15 @@ public class Student {
         this.courseNum = 0;
     }
 
+    public Student(String id, String fname, String lname, Department department) {
+        this.id = id;
+        this.fname = fname;
+        this.lname = lname;
+        this.department = department;
+        this.courses = new Course[0];
+        this.courseNum = 0;
+    }
+
     private static String generateNextId() {
         return "S" + String.format("%03d", nextId++);
     }
