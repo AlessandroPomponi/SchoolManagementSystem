@@ -21,10 +21,21 @@ public class Teacher {
     private String id;
     private static int nextId = 1;
 
-    public Teacher(String fname, String lname, Department department) {
-        this.fname = fname;
+    public Teacher(String lname, String fname, Department department) {
         this.lname = lname;
+        this.fname = fname;
         this.department = department;
-        this.id = String.format("T%01", nextId++);
+        this.id = generateNextId();
+    }
+
+    public Teacher(String lname, String fname, Department department, String id) {
+        this.lname = lname;
+        this.fname = fname;
+        this.department = department;
+        this.id = id;
+    }
+
+    private String generateNextId() {
+        return "T" + String.format("%03d", nextId++);
     }
 }

@@ -21,5 +21,7 @@ public class Main {
         schoolSystem.addStudent("Vanny", "Ruiz", "S002");
 
         schoolSystem.printStudents();
+
+        schoolSystem.addTeacher("Exceed", "Limit", "T001");
     }
 }

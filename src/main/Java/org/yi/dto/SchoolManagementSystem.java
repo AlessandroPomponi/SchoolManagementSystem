@@ -23,6 +23,8 @@ public class SchoolManagementSystem {
     private int studentCount;
     private static final int MAX_STUDENT_COURSE_REGISTRATION = 5;
     private static final int MAX_TEACHER_NUM = 20;
+    private Teacher[] teachers;
+    private int teacherCount;
     private static final int MAX_COURSE_NUM = 30;
     private static final int MAX_REGISTRATION_NUM = 5;
     private String name;
@@ -36,6 +38,8 @@ public class SchoolManagementSystem {
         this.departmentCount = 0;
         this.students = new Student[MAX_STUDENT_NUM];
         this.studentCount = 0;
+        this.teachers = new Teacher[MAX_TEACHER_NUM];
+        this.teacherCount = 0;
     }
 
     /**
@@ -120,7 +124,15 @@ public class SchoolManagementSystem {
      * @param id teacher's if
      */
     public void addTeacher(String fname, String lname, String id) {
-
+        if (teacherCount < MAX_TEACHER_NUM) {
+            Department department = new Department("Computer Science"); // Assuming a default department
+            Teacher teacher = new Teacher(lname, fname, department, id);
+            teachers[teacherCount] = teacher;
+            teacherCount++;
+            System.out.println("Teacher " + teacher + " added successfully.");
+        } else {
+            System.out.println("Cannot add teacher. Maximum teacher limit reached.");
+        }
     }
 
     /**
