@@ -53,7 +53,12 @@ public class SchoolManagementSystem {
      * The method displays all teachers in a school, only display the teacher that is not null. And only display
      * the names of course and department if there is any.
      */
-    public void printTeachers() {}
+    public void printTeachers() {
+        System.out.println("Teachers:");
+        for (int i = 0; i < teacherCount; i++) {
+            System.out.println(teachers[i]);
+        }
+    }
 
     /**
      * The method assigns a teacher to a specific course, based on teacherId and courseId, if no teacher or
