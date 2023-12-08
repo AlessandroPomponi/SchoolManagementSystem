@@ -25,5 +25,7 @@ public class Main {
         schoolSystem.addTeacher("Exceed", "Limit", "T001");
 
         schoolSystem.printTeachers();
+
+        schoolSystem.addCourse("Intro to programming", 2.0, "C001");
     }
 }

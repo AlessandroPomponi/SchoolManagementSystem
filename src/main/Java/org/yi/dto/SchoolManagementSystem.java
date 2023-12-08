@@ -26,6 +26,8 @@ public class SchoolManagementSystem {
     private Teacher[] teachers;
     private int teacherCount;
     private static final int MAX_COURSE_NUM = 30;
+    private Course[] courses;
+    private int courseCount;
     private static final int MAX_REGISTRATION_NUM = 5;
     private String name;
 
@@ -40,6 +42,8 @@ public class SchoolManagementSystem {
         this.studentCount = 0;
         this.teachers = new Teacher[MAX_TEACHER_NUM];
         this.teacherCount = 0;
+        this.courses = new Course[MAX_COURSE_NUM];
+        this.courseCount = 0;
     }
 
     /**
@@ -107,7 +111,17 @@ public class SchoolManagementSystem {
      * @param credits the amount of credits the course has
      * @param id department id
      */
-    public void addCourse(String courseName, double credits, String id) {}
+    public void addCourse(String courseName, double credits, String id) {
+        if (courseCount < MAX_COURSE_NUM) {
+            Department department = new Department("Computer Science"); // Assuming a default department
+            Course course = new Course(credits, department, null, courseName);
+            courses[courseCount] = course;
+            courseCount++;
+            System.out.println("Course " + course + " added successfully.");
+        } else {
+            System.out.println("Cannot add course. Maximum course limit reached.");
+        }
+    }
 
     /**
      * The method registers a course for a student, based on studentId and courseId, which will check
