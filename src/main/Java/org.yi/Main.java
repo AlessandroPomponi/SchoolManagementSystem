@@ -18,11 +18,11 @@ public class Main {
         schoolSystem.addDepartment("Music");
 
         schoolSystem.addStudent("Mike", "Conan", "S001");
-        schoolSystem.addStudent("Vanny", "Ruiz", "S002");
+        schoolSystem.addStudent("John", "Snow", "S002");
 
         schoolSystem.printStudents();
 
-        schoolSystem.addTeacher("Exceed", "Limit", "T001");
+        schoolSystem.addTeacher("Yi", "Wang", "T001");
 
         schoolSystem.printTeachers();
 
@@ -38,6 +38,5 @@ public class Main {
         schoolSystem.registerCourse("S007", "C001"); // Trying to register with a non-existent student id
         schoolSystem.registerCourse("S001", "C007"); // Trying to register with a non-existent course id
         schoolSystem.registerCourse("S001", "C002"); // Registering for another course
-
     }
 }

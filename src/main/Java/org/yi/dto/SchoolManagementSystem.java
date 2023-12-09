@@ -29,11 +29,6 @@ public class SchoolManagementSystem {
     private Course[] courses;
     private int courseCount;
     private static final int MAX_COURSE_STUDENT_NUM = 5;
-    private String name;
-
-    public SchoolManagementSystem(String name) {
-        this.name = name;
-    }
 
     public SchoolManagementSystem() {
         this.departments = new Department[MAX_DEPARTMENT_NUM];
@@ -234,7 +229,7 @@ public class SchoolManagementSystem {
     }
 
     /**
-     * The method searches for a course in the courses based on a courseId.
+     * The method searches for a course in the system based on a course's id.
      * @param id course id
      * @return a course or null if the courseId does not match with anything in the courses
      */
@@ -250,7 +245,12 @@ public class SchoolManagementSystem {
     /**
      * Display all departments in a school, only display the department that is not null.
      */
-    public void printDepartment() {}
+    public void printDepartments() {
+        System.out.println("Departments:");
+        for (int i = 0; i < departmentCount; i++) {
+            System.out.println(departments[i]);
+        }
+    }
 
     /**
      * The method adds a new student to the list of students in the system.
@@ -271,7 +271,7 @@ public class SchoolManagementSystem {
     }
 
     /**
-     * The method searches for a teacher in the teachers based on the id.
+     * The method searches for a teacher in the system based on the id.
      * @param id teacher id
      * @returna a teacher or null if the teacherId does not match with anything in the teachers
      */
@@ -285,7 +285,12 @@ public class SchoolManagementSystem {
     }
 
     /**
-     * Display all courses in a school, only display the course that is not null.
+     * Display all courses in the school, only display the course that is not null.
      */
-    public void printCourses() {}
+    public void printCourses() {
+        System.out.println("Courses:");
+        for (int i = 0; i < courseCount; i++) {
+            System.out.println(courses[i]);
+        }
+    }
 }
