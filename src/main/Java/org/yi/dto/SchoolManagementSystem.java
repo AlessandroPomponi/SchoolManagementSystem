@@ -102,7 +102,7 @@ public class SchoolManagementSystem {
             departmentCount++;
             System.out.println("Department " + department);
         } else {
-            System.out.println("Cannot add department. Limit of " + MAX_DEPARTMENT_NUM + " departments reached.");
+            System.out.println("Max department reached, add a new department failed.");
         }
     }
 
@@ -139,13 +139,13 @@ public class SchoolManagementSystem {
      */
     public void addCourse(String courseName, double credits, String id) {
         if (courseCount < MAX_COURSE_NUM) {
-            Department department = new Department("Computer Science"); // Assuming a default department
+            Department department = new Department("Computer Science");
             Course course = new Course(credits, department, null, courseName);
             courses[courseCount] = course;
             courseCount++;
             System.out.println("Course " + course + " added successfully.");
         } else {
-            System.out.println("Cannot add course. Maximum course limit reached.");
+            System.out.println("Max course reached, add a new course failed.");
         }
     }
 
@@ -218,13 +218,13 @@ public class SchoolManagementSystem {
      */
     public void addTeacher(String fname, String lname, String id) {
         if (teacherCount < MAX_TEACHER_NUM) {
-            Department department = new Department("Computer Science"); // Assuming a default department
+            Department department = new Department("Computer Science");
             Teacher teacher = new Teacher(lname, fname, department, id);
             teachers[teacherCount] = teacher;
             teacherCount++;
             System.out.println("Teacher " + teacher + " added successfully.");
         } else {
-            System.out.println("Cannot add teacher. Maximum teacher limit reached.");
+            System.out.println("Max teacher reached, add a new teacher failed.");
         }
     }
 
@@ -260,13 +260,13 @@ public class SchoolManagementSystem {
      */
     public void addStudent(String fname, String lname, String id) {
         if (studentCount < MAX_STUDENT_NUM) {
-            Department department = new Department("Computer Science"); // Assuming a default department
+            Department department = new Department("Computer Science");
             Student student = new Student(id, fname, lname, department);
             students[studentCount] = student;
             studentCount++;
             System.out.println("Student " + student + " added successfully.");
         } else {
-            System.out.println("Cannot add student. Maximum student limit reached.");
+            System.out.println("Max student reached, add a new student failed.");
         }
     }
 
