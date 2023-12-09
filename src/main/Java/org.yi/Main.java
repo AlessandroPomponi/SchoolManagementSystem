@@ -26,6 +26,10 @@ public class Main {
 
         schoolSystem.printTeachers();
 
-        schoolSystem.addCourse("Intro to programming", 2.0, "C001");
+        schoolSystem.addCourse("Intro to programming", 3.0, "C001");
+
+        schoolSystem.modifyCourseTeacher("T001", "C001");
+        schoolSystem.modifyCourseTeacher("T007", "C007");
+        schoolSystem.modifyCourseTeacher("T001", "C007");
     }
 }

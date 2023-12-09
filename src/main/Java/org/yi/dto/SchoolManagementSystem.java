@@ -70,7 +70,32 @@ public class SchoolManagementSystem {
      * @param teacherId teacher id
      * @param courseId course id
      */
-    public void modifyCourseTeacher(String teacherId, String courseId) {}
+    public void modifyCourseTeacher(String teacherId, String courseId) {
+        boolean courseFound = false;
+        boolean teacherFound = false;
+        for (int i = 0; i < courseCount; i++) {
+            if (courses[i].getId().equals(courseId)) {
+                courseFound = true;
+                for (int j = 0; j < teacherCount; j++) {
+                    if (teachers[j].getId().equals(teacherId)) {
+                        teacherFound = true;
+                        courses[i].setTeacher(teachers[j]);
+                        System.out.println("Course " + courses[i] + " teacher info updated successfully.");
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+        if (!courseFound) {
+            System.out.println("Cannot find any course match with courseId " + courseId +
+                    ", modify teacher for course " + courseId + " failed.");
+        }
+        if (!teacherFound) {
+            System.out.println("Cannot find any teacher match with teacherId " + teacherId +
+                    ", modify teacher for course " + courseId + " failed.");
+        }
+    }
 
     /**
      * The method add a new department to the list of departments.
