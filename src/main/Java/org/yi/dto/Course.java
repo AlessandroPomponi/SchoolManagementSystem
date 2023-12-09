@@ -23,12 +23,12 @@ public class Course {
     private Teacher teacher;
     private String courseName;
     private static int nextId = 1;
-    private static final int MAX_STUDENT_NUM = 200;
+    private static final int MAX_COURSE_STUDENT_NUM = 5;
 
     public Course(double credit, Department department, Teacher teacher, String courseName) {
         this.credit = credit;
         this.id = generateNextId();
-        this.students = new Student[MAX_STUDENT_NUM];
+        this.students = new Student[MAX_COURSE_STUDENT_NUM];
         this.department = department;
         this.teacher = teacher;
         this.courseName = courseName;
@@ -38,7 +38,7 @@ public class Course {
     public Course(String courseName, double credit, Department department) {
         this.credit = credit;
         this.id = generateNextId();
-        this.students = new Student[MAX_STUDENT_NUM];
+        this.students = new Student[MAX_COURSE_STUDENT_NUM];
         this.department = department;
         this.teacher = null;
         this.courseName = courseName;

@@ -28,7 +28,7 @@ public class SchoolManagementSystem {
     private static final int MAX_COURSE_NUM = 30;
     private Course[] courses;
     private int courseCount;
-    private static final int MAX_REGISTRATION_NUM = 5;
+    private static final int MAX_COURSE_STUDENT_NUM = 5;
     private String name;
 
     public SchoolManagementSystem(String name) {
@@ -51,7 +51,14 @@ public class SchoolManagementSystem {
      * @param id department id
      * @return a department or null if the id does not match with anything
      */
-//    public Department findDepartment(String id) {}
+    public Department findDepartment(String id) {
+        for (int i = 0; i < departmentCount; i++) {
+            if (departments[i].getId().equals(id)) {
+                return departments[i];
+            }
+        }
+        return null;
+    }
 
     /**
      * The method displays all teachers in a school, only display the teacher that is not null. And only display
@@ -128,7 +135,14 @@ public class SchoolManagementSystem {
      * @param id student id
      * @return a student or null if the studentId does not match with anything in the students
      */
-//    public Student findStudent(String id) {}
+    public Student findStudent(String id) {
+        for (int i = 0; i < studentCount; i++) {
+            if (students[i].getId().equals(id)) {
+                return students[i];
+            }
+        }
+        return null;
+    }
 
     /**
      * The method adds a new course to the list of courses in the system.
@@ -184,7 +198,14 @@ public class SchoolManagementSystem {
      * @param id course id
      * @return a course or null if the courseId does not match with anything in the courses
      */
-//    public Course findCourse(String id) {}
+    public Course findCourse(String id) {
+        for (int i = 0; i < courseCount; i++) {
+            if (courses[i].getId().equals(id)) {
+                return courses[i];
+            }
+        }
+        return null;
+    }
 
     /**
      * Display all departments in a school, only display the department that is not null.
@@ -214,7 +235,14 @@ public class SchoolManagementSystem {
      * @param id teacher id
      * @returna a teacher or null if the teacherId does not match with anything in the teachers
      */
-//    public Teacher findTeacher(String id) {}
+    public Teacher findTeacher(String id) {
+        for (int i = 0; i < teacherCount; i++) {
+            if (teachers[i].getId().equals(id)) {
+                return teachers[i];
+            }
+        }
+        return null;
+    }
 
     /**
      * Display all courses in a school, only display the course that is not null.

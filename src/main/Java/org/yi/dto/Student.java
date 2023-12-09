@@ -24,13 +24,14 @@ public class Student {
     private int courseNum;
     private static int nextId = 1;
     private Department department;
+    private static final int MAX_STUDENT_COURSE_REGISTRATION = 5;
 
     public Student(String fname, String lname, Department department) {
         this.id = generateNextId();
         this.fname = fname;
         this.lname = lname;
         this.department = department;
-        this.courses = new Course[0];
+        this.courses = new Course[MAX_STUDENT_COURSE_REGISTRATION];
         this.courseNum = 0;
     }
 
@@ -39,7 +40,7 @@ public class Student {
         this.fname = fname;
         this.lname = lname;
         this.department = department;
-        this.courses = new Course[0];
+        this.courses = new Course[MAX_STUDENT_COURSE_REGISTRATION];
         this.courseNum = 0;
     }
 
