@@ -165,7 +165,55 @@ public class SchoolManagementSystem {
      * @param studentId the student id
      * @param courseId the course id
      */
-    public void registerCourse(String studentId, String courseId) {}
+    public void registerCourse(String studentId, String courseId) {
+        Student student = findStudent(studentId);
+        Course course = findCourse(courseId);
+
+        if (student != null && course != null) {
+            if (student.getCourseNum() < MAX_STUDENT_COURSE_REGISTRATION) {
+                if (course.getStudentNum() < MAX_COURSE_STUDENT_NUM) {
+                    boolean alreadyRegistered = false;
+
+                    for (int i = 0; i < student.getCourseNum(); i++) {
+                        if (student.getCourses()[i].getId().equals(course.getId())) {
+                            alreadyRegistered = true;
+                            break;
+                        }
+                    }
+
+                    if (!alreadyRegistered) {
+                        student.getCourses()[student.getCourseNum()] = course;
+                        student.setCourseNum(student.getCourseNum() + 1);
+
+                        course.getStudents()[course.getStudentNum()] = student;
+                        course.setStudentNum(course.getStudentNum() + 1);
+
+                        System.out.println("Student register course successfully");
+                        System.out.println("Latest student info: " + student);
+                        System.out.println("Latest course info: " + course);
+                    } else {
+                        System.out.println("Student " + student.getId() + " has already registered Course " + course.getId() +
+                                ", register course " + course.getId() + " for student " + student.getId() + " failed.");
+                    }
+                } else {
+                    System.out.println("Course " + course.getId() + " has been fully registered, register course " + course.getId() +
+                            " for student " + student.getId() + " failed.");
+                }
+            } else {
+                System.out.println("Student " + student.getId() + " has already registered " + MAX_STUDENT_COURSE_REGISTRATION +
+                        " courses, register course for student " + student.getId() + " failed.");
+            }
+        } else {
+            if (student == null) {
+                System.out.println("Cannot find any student match with studentId " + studentId +
+                        ", register course for student " + studentId + " failed.");
+            }
+            if (course == null) {
+                System.out.println("Cannot find any course match with courseId " + courseId +
+                        ", register course for student " + studentId + " failed.");
+            }
+        }
+    }
 
     /**
      * The method adds a new teacher to the list of teachers in the system.
