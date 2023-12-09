@@ -48,4 +48,20 @@ public class Course {
     private static String generateNextId() {
         return "C" + String.format("%03d", nextId++);
     }
+
+    @Override
+    public String toString() {
+        String result = "Course{id='" + id + "', courseName='" + courseName + "', credit=" + credit +
+                ", teacher=" + teacher + ", department=" + department + ", students=[";
+
+        for (int i = 0; i < studentNum; i++) {
+            result += students[i];
+            if (i < studentNum - 1) {
+                result += ", ";
+            }
+        }
+
+        result += "]}";
+        return result;
+    }
 }

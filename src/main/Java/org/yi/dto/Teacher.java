@@ -10,7 +10,6 @@ import lombok.ToString;
  *
  * @author Alessandro Pomponi
  */
-@ToString
 @EqualsAndHashCode
 @Getter
 @Setter
@@ -37,5 +36,14 @@ public class Teacher {
 
     private String generateNextId() {
         return "T" + String.format("%03d", nextId++);
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher{id='" + id + '\'' +
+                ", fname='" + fname + '\'' +
+                ", lname='" + lname + '\'' +
+                ", department=" + department +
+                '}';
     }
 }

@@ -12,7 +12,6 @@ import java.util.Arrays;
  *
  * @author Alessandro Pomponi
  */
-@ToString
 @EqualsAndHashCode
 @Getter
 @Setter
@@ -46,5 +45,26 @@ public class Student {
 
     private static String generateNextId() {
         return "S" + String.format("%03d", nextId++);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Student{id='").append(id).append('\'');
+        sb.append(", fname='").append(fname).append('\'');
+        sb.append(", lname='").append(lname).append('\'');
+        sb.append(", department=").append(department);
+        sb.append(", courseNum=").append(courseNum);
+        sb.append(", courses=[");
+
+        for (int i = 0; i < courseNum; i++) {
+            sb.append("'").append(courses[i].getCourseName()).append("'");
+            if (i < courseNum - 1) {
+                sb.append(", ");
+            }
+        }
+
+        sb.append("]}");
+        return sb.toString();
     }
 }
