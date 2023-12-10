@@ -9,7 +9,7 @@ import org.yi.dto.SchoolManagementSystem;
  */
 public class Main {
     public static void main(String[] args) {
-        SchoolManagementSystem schoolSystem = new SchoolManagementSystem();
+        SchoolManagementSystem schoolSystem = new SchoolManagementSystem("Vanier College");
 
         schoolSystem.addDepartment("Computer Science");
         schoolSystem.addDepartment("Social Science");

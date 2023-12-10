@@ -29,8 +29,10 @@ public class SchoolManagementSystem {
     private Course[] courses;
     private int courseCount;
     private static final int MAX_COURSE_STUDENT_NUM = 5;
+    private String schoolName;
 
-    public SchoolManagementSystem() {
+    public SchoolManagementSystem(String schoolName) {
+        this.schoolName = schoolName;
         this.departments = new Department[MAX_DEPARTMENT_NUM];
         this.departmentCount = 0;
         this.students = new Student[MAX_STUDENT_NUM];
