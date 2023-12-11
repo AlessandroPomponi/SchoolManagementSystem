@@ -17,6 +17,8 @@ public class Main {
         schoolSystem.addDepartment("Math");
         schoolSystem.addDepartment("Music");
 
+        schoolSystem.printDepartments();
+
         schoolSystem.addStudent("Mike", "Conan", "S001");
         schoolSystem.addStudent("John", "Snow", "S002");
 

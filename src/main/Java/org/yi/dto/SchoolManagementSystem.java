@@ -102,7 +102,7 @@ public class SchoolManagementSystem {
             Department department = new Department(departmentName);
             departments[departmentCount] = department;
             departmentCount++;
-            System.out.println("Department " + department);
+            System.out.println("Department " + department + "added successfully.");
         } else {
             System.out.println("Max department reached, add a new department failed.");
         }
